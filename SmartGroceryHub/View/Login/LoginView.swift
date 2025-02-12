@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @State var loginVM = MainViewModel.shared;
+    @StateObject var loginVM = MainViewModel.shared;
     
     var body: some View {
         ZStack{
@@ -36,8 +36,29 @@ struct LoginView: View {
                     .foregroundColor(.secondaryText)
                     .padding(.bottom, .screenWidth * 0.1)
                 
+                LineTextField( title: "Email", placholder: "Nhập email của bạn", txt: $loginVM.txtEmail, keyboardType: .emailAddress)
+                    .padding(.bottom, .screenWidth * 0.07)
                 
-               
+                LineSecureField( title: "Mật khẩu", placholder: "Nhập mật khẩu của bạn", txt: $loginVM.txtPassword, isShowPassword: $loginVM.isShowPassword)
+                    .padding(.bottom, .screenWidth * 0.02)
+                
+                Button{
+                    
+                } label: {
+                    Text("Bạn quên mật khẩu?")
+                        .font(.customfont(.medium, fontSize: 14))
+                        .foregroundColor(.primaryText)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+                .padding(.bottom, .screenWidth * 0.03)
+                
+                RoundButton(title: "Log In") {
+                    loginVM.serviceCallLogin()
+                }
+                .padding(.bottom, .screenWidth * 0.05)
+                
+                
+                
                 Spacer()
                 
             }
@@ -69,6 +90,9 @@ struct LoginView: View {
             .padding(.top, .topInsets)
             .padding(.horizontal, 20)
             
+        }
+        .alert(isPresented: $loginVM.showError) {
+            Alert(title: Text(Globs.Appname), message: Text( loginVM.errorMessage ), dismissButton: .default(Text("OK")))
         }
         .background(Color.white)
         .navigationTitle("")
