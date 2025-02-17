@@ -25,5 +25,5 @@ Công nghệ sử dụng:
   * CoreData / Realm 
 
 Liên hệ:
-Nếu có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi qua email: phamtrieuduong97@gmail.com
+Nếu có bất kỳ câu hỏi nào, vui lòng liên hệ với tôi qua email: phamtrieuduong97@gmail.com
 
