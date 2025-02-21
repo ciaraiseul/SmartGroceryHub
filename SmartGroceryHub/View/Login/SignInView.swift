@@ -60,11 +60,38 @@ struct SignInView: View {
                             .frame(minWidth: 0, maxWidth: .infinity)
                     }
                     
+                    NavigationLink {
+                        LoginView()
+                    } label: {
+                        Text("Continue with Email Sign In")
+                            .font(.customfont(.semibold, fontSize: 18))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                    .background( Color(hex: "5383EC"))
+                    .cornerRadius(20)
+                    .padding(.bottom, 8 )
+                    
+                    
+                    NavigationLink {
+                        SignUpView()
+                    } label: {
+                        Text("Continue with Email Sign Up")
+                            .font(.customfont(.semibold, fontSize: 18))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                    .background( Color.primaryApp)
+                    .cornerRadius(20)
+                    .padding(.bottom, 8 )
+                    
                     Divider()
                         .padding(.bottom, 25)
                     
                     Text( "Hoặc đăng nhập với")
-                        .font(.customfont(.semibold, fontSize: 14))
+                        .font(.custom("Times New Roman", size: 16))
                         .foregroundColor(.textTitle)
                         .multilineTextAlignment(.center)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
