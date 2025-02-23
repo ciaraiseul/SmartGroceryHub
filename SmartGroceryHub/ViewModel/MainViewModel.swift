@@ -23,6 +23,13 @@ class MainViewModel: ObservableObject {
     
     init() {
         
+        if( Utils.UDValueBool(key: Globs.userLogin) ) {
+            // User Login
+            self.setUserData(uDict: Utils.UDValue(key: Globs.userPayload) as? NSDictionary ?? [:] )
+        }else{
+            // User Not Login
+        }
+        
         #if DEBUG
         txtUsername = "Phạm Trường Giang"
         txtEmail = "giangdeptrai2k2@gmail.com"

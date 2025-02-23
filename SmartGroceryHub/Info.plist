@@ -9,5 +9,12 @@
 		<string>Gilroy-Regular.ttf</string>
 		<string>Gilroy-SemiBold.ttf</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UILaunchScreen</key>
+		<dict/>
+		<key>UILaunchStoryboardName</key>
+		<string></string>
+	</dict>
 </dict>
 </plist>
