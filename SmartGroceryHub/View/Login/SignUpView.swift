@@ -88,11 +88,11 @@ struct SignUpView: View {
                         LoginView()
                     } label: {
                         HStack{
-                            Text("Bạn chưa có tài khoản?")
+                            Text("Bạn đã có tài khoản?")
                                 .font(.custom("Times New Roman", size: 16))
                                 .foregroundColor(.primaryText)
                             
-                            Text("Đăng ký")
+                            Text("Đăng nhập")
                                 .font(.custom("Times New Roman", size: 16))
                                 .foregroundColor(.primaryApp)
                         }
