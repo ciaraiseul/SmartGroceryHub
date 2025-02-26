@@ -21,9 +21,9 @@ struct MainTabView: View {
                 ExploreView().tag(3)
                 ExploreView().tag(4)
             }
-            .onAppear{
-                UIScrollView.appearance().isScrollEnabled = false
-            }
+//            .onAppear{
+//                UIScrollView.appearance().isScrollEnabled = false
+//            }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: homeVM.selectTab) { newValue in
                 debugPrint("Sel tab \(newValue)")
@@ -31,85 +31,63 @@ struct MainTabView: View {
             
             HStack{
                 
-                Button{
-                } label: {
-                    VStack{
-                        Image("store_tab")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25, height: 25)
-                        
-                        Text("Cửa hàng")
-                            .font(.custom("Times New Roman", size: 16))
+                TabButton(title: "Trang chủ",
+                          icon: "store_tab",
+                          isSelect: homeVM.selectTab == 0)
+                {
+                    print("Button tab")
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            homeVM.selectTab = 0
+                        }
                     }
-                    
                 }
-                .foregroundColor(homeVM.selectTab == 0 ? .primaryApp : .primaryText)
-                .frame(minWidth: 0, maxWidth: .infinity)
                 
-                Button{
-                } label: {
-                    VStack{
-                        Image("explore_tab")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25, height: 25)
-                        
-                        Text("Khám phá")
-                            .font(.custom("Times New Roman", size: 16))
+                TabButton(title: "Khám phá",
+                          icon: "explore_tab",
+                          isSelect: homeVM.selectTab == 1)
+                {
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            homeVM.selectTab = 1
+                        }
                     }
-                    
                 }
-                .foregroundColor(homeVM.selectTab == 1 ? .primaryApp : .primaryText)
-                .frame(minWidth: 0, maxWidth: .infinity)
                 
-                Button{
-                } label: {
-                    VStack{
-                        Image("cart_tab")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25, height: 25)
-                        
-                        Text("Giỏ hàng")
-                            .font(.custom("Times New Roman", size: 16))
+                TabButton(title: "Giỏ hàng",
+                          icon: "cart_tab",
+                          isSelect: homeVM.selectTab == 2)
+                {
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            homeVM.selectTab = 2
+                        }
                     }
-                    
                 }
-                .foregroundColor(homeVM.selectTab == 2 ? .primaryApp : .primaryText)
-                .frame(minWidth: 0, maxWidth: .infinity)
                 
-                Button{
-                } label: {
-                    VStack{
-                        Image("fav_tab")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25, height: 25)
-                        
-                        Text("Yêu thích")
-                            .font(.custom("Times New Roman", size: 16))
+                TabButton(title: "Yêu thích",
+                          icon: "fav_tab",
+                          isSelect: homeVM.selectTab == 3)
+                {
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            homeVM.selectTab = 3
+                        }
                     }
-                    
                 }
-                .foregroundColor(homeVM.selectTab == 3 ? .primaryApp : .primaryText)
-                .frame(minWidth: 0, maxWidth: .infinity)
                 
-                Button{
-                } label: {
-                    VStack{
-                        Image("account_tab")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25, height: 25)
-                        
-                        Text("Tài khoản")
-                            .font(.custom("Times New Roman", size: 16))
+                TabButton(title: "Tài khoản",
+                          icon: "account_tab",
+                          isSelect: homeVM.selectTab == 4)
+                {
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            homeVM.selectTab = 4
+                        }
                     }
-                    
                 }
-                .foregroundColor(homeVM.selectTab == 4 ? .primaryApp : .primaryText)
-                .frame(minWidth: 0, maxWidth: .infinity)
+                
+                
             }
             .padding(.top, 10)
             .padding(.bottom, .bottomInsets)
