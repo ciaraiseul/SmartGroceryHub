@@ -9,7 +9,32 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            ScrollView{
+                VStack{
+                    Image("app_logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60)
+                        
+                    HStack{
+                        Image("location")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 16)
+                        
+                        Text("48 Tố Hữu, Hà Nội")
+                            .font(.custom("Times New Roman", size: 18))
+                            .foregroundColor(.darkGray)
+                    }
+                }
+                .padding(.top, .topInsets)
+                
+                
+            }
+        }
+        .ignoresSafeArea()
+
     }
 }
 

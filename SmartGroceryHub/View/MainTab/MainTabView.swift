@@ -21,9 +21,9 @@ struct MainTabView: View {
                 ExploreView().tag(3)
                 ExploreView().tag(4)
             }
-//            .onAppear{
-//                UIScrollView.appearance().isScrollEnabled = false
-//            }
+            .onAppear{
+                UIScrollView.appearance().isScrollEnabled = false
+            }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: homeVM.selectTab) { newValue in
                 debugPrint("Sel tab \(newValue)")
