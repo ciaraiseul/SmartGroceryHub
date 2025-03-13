@@ -22,6 +22,7 @@ struct SearchTextField: View {
                 .frame(width: 12, height: 12)
            
             TextField(placholder, text: $txt)
+                .font(.custom("Times New Roman", size: 17))
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .frame(minWidth: 0, maxWidth: .infinity)

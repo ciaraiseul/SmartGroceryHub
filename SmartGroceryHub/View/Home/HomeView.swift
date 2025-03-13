@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject var HomeVM = HomeViewModel.shared
+    
     var body: some View {
         ZStack{
             ScrollView{
@@ -15,7 +18,7 @@ struct HomeView: View {
                     Image("app_logo")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 60)
+                        .frame(width: 25)
                         
                     HStack{
                         Image("location")
@@ -27,10 +30,24 @@ struct HomeView: View {
                             .font(.custom("Times New Roman", size: 18))
                             .foregroundColor(.darkGray)
                     }
+                    
+                    SearchTextField(placholder: "Tìm kiếm", txt: $HomeVM.txtSearch)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                    
                 }
                 .padding(.top, .topInsets)
                 
+                Image("banner_top")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 115)
+                    .padding(.horizontal, 20)
                 
+                SectionTitleAll(title: "Ưu đãi độc quyền", titleAll: "Xem tất cả") {
+                    
+                }
+                .padding(.horizontal, 20)
             }
         }
         .ignoresSafeArea()
