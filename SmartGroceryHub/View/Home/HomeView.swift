@@ -48,6 +48,23 @@ struct HomeView: View {
                     
                 }
                 .padding(.horizontal, 20)
+                
+                ScrollView(.horizontal, showsIndicators: false){
+                    LazyHStack(spacing: 15) {
+                        ForEach (0...5, id: \.self){
+                            index in
+                            
+                            ProductCell{
+                                
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 4)
+                }
+                
+                
+                
             }
         }
         .ignoresSafeArea()
