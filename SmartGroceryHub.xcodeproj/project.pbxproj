@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C5328AF82D59F8A500C3F145 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = C5328AF72D59F8A500C3F145 /* CountryPicker */; };
+		C5A492362D8BC83500D8EC60 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C5A492352D8BC83500D8EC60 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A492362D8BC83500D8EC60 /* SDWebImageSwiftUI in Frameworks */,
 				C5328AF82D59F8A500C3F145 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +133,7 @@
 			name = SmartGroceryHub;
 			packageProductDependencies = (
 				C5328AF72D59F8A500C3F145 /* CountryPicker */,
+				C5A492352D8BC83500D8EC60 /* SDWebImageSwiftUI */,
 			);
 			productName = SmartGroceryHub;
 			productReference = C5CE1CD22D58CDE900B36EF3 /* SmartGroceryHub.app */;
@@ -216,6 +219,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C5328AF62D59F8A500C3F145 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+				C5A492342D8BC83500D8EC60 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C5CE1CD32D58CDE900B36EF3 /* Products */;
@@ -600,6 +604,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		C5A492342D8BC83500D8EC60 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -607,6 +619,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C5328AF62D59F8A500C3F145 /* XCRemoteSwiftPackageReference "CountryPicker" */;
 			productName = CountryPicker;
+		};
+		C5A492352D8BC83500D8EC60 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5A492342D8BC83500D8EC60 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

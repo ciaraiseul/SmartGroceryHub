@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var HomeVM = HomeViewModel.shared
+    @StateObject var homeVM = HomeViewModel.shared
     
     var body: some View {
         ZStack{
@@ -31,7 +31,7 @@ struct HomeView: View {
                             .foregroundColor(.darkGray)
                     }
                     
-                    SearchTextField(placholder: "Tìm kiếm", txt: $HomeVM.txtSearch)
+                    SearchTextField(placholder: "Tìm kiếm", txt: $homeVM.txtSearch)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                     
@@ -51,20 +51,72 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false){
                     LazyHStack(spacing: 15) {
-                        ForEach (0...5, id: \.self){
-                            index in
+                        ForEach (homeVM.offerArr, id: \.id){
+                            pObj in
                             
-                            ProductCell{
+                            ProductCell(pObj: pObj, didAddCart: {
                                 
-                            }
+                            })
                         }
                     }
                     .padding(.horizontal, 20)
                     .padding(.vertical, 4)
                 }
                 
+                SectionTitleAll(title: "Bán chạy nhất", titleAll: "Xem tất cả") {
+                    
+                }
+                .padding(.horizontal, 20)
                 
+                ScrollView(.horizontal, showsIndicators: false){
+                    LazyHStack(spacing: 15) {
+                        ForEach (homeVM.bestArr, id: \.id){
+                            pObj in
+                            
+                            ProductCell(pObj: pObj, didAddCart: {
+                                
+                            })
+                        
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 4)
+                }
                 
+                SectionTitleAll(title: "Gian hàng", titleAll: "Xem tất cả") {
+                    
+                }
+                .padding(.horizontal, 20)
+                
+                ScrollView(.horizontal, showsIndicators: false){
+                    LazyHStack(spacing: 15) {
+                        ForEach (homeVM.typeArr, id: \.id){
+                            tObj in
+                            
+                            CategoryCell(tObj: tObj, didAddCart: {
+                                
+                            })
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 4)
+                }
+                .padding(.bottom, 15)
+                
+                ScrollView(.horizontal, showsIndicators: false){
+                    LazyHStack(spacing: 15) {
+                        ForEach (homeVM.listArr, id: \.id){
+                            pObj in
+                            
+                            ProductCell(pObj: pObj, didAddCart: {
+                                
+                            })
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 4)
+                }
+                .padding(.bottom, 15)
             }
         }
         .ignoresSafeArea()
